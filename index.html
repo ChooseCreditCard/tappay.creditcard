@@ -23,102 +23,129 @@
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-64FE63JQ3H"></script>
   <script>
-    window.dataLayer=window.dataLayer||[];
+    window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config','G-64FE63JQ3H');
+    gtag('config', 'G-64FE63JQ3H');
   </script>
 </head>
 
-<body>
-<header class="nav">
-  <div class="brand">
-    <div class="cc-logo">CC</div>
-    <span>TapPay.creditcard</span>
-  </div>
-  <nav class="links">
-    <a href="https://tech.creditcard/">Tech</a>
-    <a href="https://fin.creditcard/">Collection</a>
-    <a href="https://choose.creditcard/">Choose</a>
-  </nav>
-</header>
+<body class="bg-slate-950 text-slate-100">
 
-<div class="wrap">
-  <section class="hero">
-    <h1>Tap to Pay & Mobile Wallets</h1>
-    <p>Pay with your card, phone or wearable — secure and seamless.</p>
-    <a class="cta" href="https://choose.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=tappay_spoke">
-      Compare Tap-Friendly Cards
-    </a>
-  </section>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-inner max-w-6xl">
+      <div class="brand">
+        <div class="cc-logo">CC</div>
+        <div class="brand-text">
+          <span class="brand-title">TapPay.creditcard</span>
+          <span class="brand-subtitle">Tap · Wallets · Wearables</span>
+        </div>
+      </div>
 
-  <section class="section">
-    <h2>Contactless payments explained</h2>
-    <p class="small">TapPay.creditcard shows how payments work without swiping or inserting a card:</p>
-    <ul class="list">
-      <li>• NFC chip in the card/device</li>
-      <li>• Tokenised card number for security</li>
-      <li>• Near-field communication (~4 cm range)</li>
-      <li>• Payment networks handle authorization instantly</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2>Use-cases: card, phone, wearable</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Contactless card</h3>
-        <p class="small">Traditional plastic card with NFC — tap at checkout.</p>
-      </div>
-      <div class="card">
-        <h3>Mobile wallet</h3>
-        <p class="small">Apple Pay, Google Pay — tokenised virtual card on your phone.</p>
-      </div>
-      <div class="card">
-        <h3>Wearable</h3>
-        <p class="small">Watch, ring or band — ultra-fast checkout, transit ready.</p>
-      </div>
+      <nav class="nav-links">
+        <a href="https://tech.creditcard/?utm_source=tappay.creditcard&utm_medium=nav">Tech</a>
+        <a href="https://fin.creditcard/?utm_source=tappay.creditcard&utm_medium=nav">Collection</a>
+        <a href="https://choose.creditcard/?utm_source=tappay.creditcard&utm_medium=nav">Choose</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="section">
-    <h2>Security & best practices</h2>
-    <p class="small">Secure usage of tap & mobile wallet:</p>
-    <ul class="list">
-      <li>• Use biometrics or PIN on device</li>
-      <li>• Enable transaction alerts</li>
-      <li>• Remove unused cards from your wallet</li>
-      <li>• Lock or erase your device if lost</li>
-    </ul>
-  </section>
+  <main class="cc-page">
 
-  <section class="section">
-    <h2>Which cards work best?</h2>
-    <p class="small">To benefit fully from contactless and mobile wallets, look for:</p>
-    <ul class="list">
-      <li>• Cards with no foreign-transaction fees</li>
-      <li>• Cards with strong rewards on mobile wallet usage</li>
-      <li>• Cards with integrated wallet/virtual card support</li>
-      <li>• Cards with global acceptance and NFC support</li>
-    </ul>
-  </section>
+    <p class="cc-breadcrumb">TapPay.creditcard · Tap · Mobile Wallets</p>
 
-  <section class="section">
-    <h2>See recommended tap-friendly cards</h2>
-    <p class="small">
-      TapPay.creditcard explains the technology and what to look for.  
-      To compare actual products with rewards, fees and limits:
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Tap to Pay & Mobile Wallets</h1>
+      <p class="hero-lead">
+        Pay with your card, phone or wearable — secure and seamless.
+      </p>
+      <a class="cta"
+         href="https://choose.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=tappay_top">
+        Compare Tap-Friendly Cards
+      </a>
+    </section>
+
+    <!-- Contactless explained -->
+    <section class="section">
+      <h2>Contactless payments explained</h2>
+      <p class="small">TapPay.creditcard breaks down how payments work without inserting or swiping cards:</p>
+      <ul class="list">
+        <li>NFC chip in the card or device</li>
+        <li>Tokenized card number for security</li>
+        <li>Short-range radio (~4 cm)</li>
+        <li>Network authorization in milliseconds</li>
+      </ul>
+    </section>
+
+    <!-- Use-cases -->
+    <section class="section">
+      <h2>Use-cases: card, phone, wearable</h2>
+
+      <div class="cluster-grid">
+        <div class="cluster-card">
+          <h3>Contactless card</h3>
+          <p class="small">Classic plastic card with NFC built into the chip.</p>
+        </div>
+
+        <div class="cluster-card">
+          <h3>Mobile wallet</h3>
+          <p class="small">Apple Pay · Google Pay · Samsung Wallet — secure virtual numbers.</p>
+        </div>
+
+        <div class="cluster-card">
+          <h3>Wearables</h3>
+          <p class="small">Watch, ring or band — instant tap, perfect for transit.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security -->
+    <section class="section">
+      <h2>Security & best practices</h2>
+      <p class="small">Secure tap & mobile wallet usage:</p>
+      <ul class="list">
+        <li>Use device biometrics or PIN</li>
+        <li>Enable alerts for each transaction</li>
+        <li>Remove unused cards from your wallet</li>
+        <li>Erase device remotely if lost</li>
+      </ul>
+    </section>
+
+    <!-- Choosing -->
+    <section class="section">
+      <h2>Which cards work best?</h2>
+      <p class="small">For the best tap and mobile wallet performance, look for cards with:</p>
+      <ul class="list">
+        <li>No foreign-transaction fees</li>
+        <li>High rewards for wallet usage</li>
+        <li>Strong virtual card support</li>
+        <li>Global NFC compatibility</li>
+      </ul>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section">
+      <h2>See tap-friendly card recommendations</h2>
+      <p class="small">
+        TapPay.creditcard explains how it works.  
+        To compare actual products:
+      </p>
+      <a class="cta"
+         href="https://choose.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=tappay_bottom">
+        Open Comparison on Choose.Creditcard
+      </a>
+    </section>
+  </main>
+
+  <!-- MINI FOOTER -->
+  <footer class="mini-footer">
+    <p class="mini-footer-main">© 2025 The CreditCard Collection — ronarn AS</p>
+    <p class="mini-footer-contact">
+      Contact: <a href="mailto:support@cc.creditcard">support@cc.creditcard</a>
     </p>
-    <a class="cta" href="https://choose.creditcard/compare?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=tappay_spoke_bottom">
-      Open Comparison on Choose.Creditcard
-    </a>
-  </section>
-
-  <footer class="footer">
-    Part of <strong>The CreditCard Collection</strong> — by ronarn  
-    <br>Contact: <a href="mailto:support@ronarn.com">support@ronarn.com</a>
   </footer>
-</div>
 
 </body>
 </html>
