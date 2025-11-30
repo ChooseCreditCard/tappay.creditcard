@@ -4,22 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>TapPay.Creditcard – Tap-to-Pay Card & Wallet Flows Explained</title>
-  <meta name="description" content="Deep dive into tap-to-pay: how terminals, cards and mobile wallets talk to each other, how limits are set and how issuers manage contactless risk." />
+  <title>TapPay.Creditcard – How Tap-to-Pay Credit Cards Work</title>
+  <meta name="description" content="Independent explanation of tap-to-pay credit card transactions: NFC, tokenisation, limits, offline approvals, wallets and device security." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://tappay.creditcard/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="TapPay.Creditcard – Contactless Credit-Card Payments Explained" />
-  <meta property="og:description" content="Neutral overview of how tap-to-pay works: NFC, tokenization, terminal settings, verification limits and security controls for contactless cards and wallets." />
+  <meta property="og:title" content="TapPay.Creditcard – Contactless Tap-to-Pay Explained" />
+  <meta property="og:description" content="How tap-to-pay credit cards work: NFC chips, radio protocols, security, PIN limits and device-wallet tokens. Neutral, non-promotional overview." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tappay.creditcard/" />
   <meta property="og:image" content="https://choose.creditcard/preview.png?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=og_image" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TapPay.Creditcard – Contactless Credit-Card Payments Explained" />
-  <meta name="twitter:description" content="Learn what happens in a tap-to-pay transaction – from the NFC handshake to issuer decisioning, limits, fees and security checks." />
+  <meta name="twitter:title" content="TapPay.Creditcard – Tap-to-Pay Credit Cards" />
+  <meta name="twitter:description" content="Learn how tap-to-pay credit cards and device wallets work in-store: NFC, cryptograms, limits, offline approvals and security." />
   <meta name="twitter:image" content="https://choose.creditcard/preview.png?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=twitter_image" />
 
   <!-- GA4 -->
@@ -31,197 +31,175 @@
     gtag('config', 'G-64FE63JQ3H');
   </script>
 
-  <!-- Tailwind for utility classes -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Your shared minisite styles -->
+  <!-- Minisite CSS -->
   <link rel="stylesheet" href="./styles.css" />
 </head>
+
 <body class="bg-slate-950 text-slate-100">
-  <header class="site-header">
-    <div class="nav-inner max-w-6xl">
-      <div class="brand">
-        <div class="cc-logo">CC</div>
-        <div class="brand-text">
-          <div class="brand-title">TapPay.Creditcard</div>
-          <div class="brand-subtitle">Tap-to-Pay Card & Wallet Flows</div>
-        </div>
+<header class="site-header">
+  <div class="nav-inner max-w-6xl">
+    <div class="brand">
+      <div class="cc-logo">CC</div>
+      <div class="brand-text">
+        <div class="brand-title">TapPay.Creditcard</div>
+        <div class="brand-subtitle">Contactless Tap-to-Pay</div>
       </div>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#overview">Overview</a>
-        <a href="#mechanics">How It Works</a>
-        <a href="#compare">Compare</a>
-      </nav>
     </div>
-  </header>
+    <nav class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#flow">How It Works</a>
+      <a href="#security">Security</a>
+      <a href="#limits">Limits</a>
+    </nav>
+  </div>
+</header>
 
-  <main class="cc-page">
-    <!-- Breadcrumb -->
-    <div class="cc-breadcrumb">
-      <a href="https://choose.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=breadcrumb">Home</a>
-      &nbsp;›&nbsp;
-      TapPay.Creditcard
-    </div>
+<main class="cc-page">
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>What Really Happens in a Tap-to-Pay Transaction</h1>
-        <p class="hero-lead">
-          TapPay.Creditcard looks at contactless payments from a systems angle: how the terminal, card chip or wallet token talk to each other, how issuer risk engines respond in milliseconds, and why limits, fees and verification rules differ between cards.
-        </p>
-        <a class="cta" href="https://choose.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=hero_cta">
-          Compare tap-ready credit cards
-        </a>
-      </div>
-    </section>
+  <!-- Breadcrumb -->
+  <div class="cc-breadcrumb">
+    <a href="https://choose.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=breadcrumb">Home</a>
+    &nbsp;›&nbsp; TapPay.Creditcard
+  </div>
 
-    <!-- Content sections -->
-    <section id="overview" class="section">
-      <h2>Tap-to-Pay as a User Experience Layer</h2>
-      <p>Tap-to-pay is best understood as a new presentation layer on top of existing card rails. Instead of inserting the chip and entering a PIN, you present a card, phone, watch or wearable within a few centimeters of the reader and let NFC handle the data exchange.</p>
-      <p>Underneath, the same core processes still run: the transaction is packaged, routed over the card network and evaluated by the issuer. The tap simply compresses several steps into a faster, often PIN-free experience for low-value purchases.</p>
-    </section>
-
-    <section id="mechanics" class="section">
-      <h2>The TapPay Signal Path: Terminal, Chip and Issuer</h2>
-      <p>Once you tap, the terminal powers the NFC field and negotiates with the card or wallet to select an appropriate application (for example, a specific network brand). The card or device then returns a limited set of credentials, often including a dynamic cryptogram or tokenized card number.</p>
-      <p>That payload is forwarded through the acquirer and network to your issuer. A real-time risk engine checks recent behavior, geographic patterns, device indicators and the amount. If the tap meets the issuer’s risk rules and you have available limit, the authorization is approved and the terminal prints or displays the result.</p>
-    </section>
-
-    <section class="section">
-      <h2>Limits, Offline Counters and Risk Controls</h2>
-      <p>Contactless limits are typically configured across several layers: scheme rules, local regulation, issuer preferences and sometimes the terminal itself. Below certain thresholds, issuers may allow “no-CVV, no-PIN” taps; above those amounts, they can force PIN entry or decline the transaction.</p>
-      <p>Some cards also maintain offline counters on the chip, which track how many low-value taps have occurred since the last online verification. When a threshold is reached, the card and issuer coordinate to demand stronger authentication before more tap-only payments are accepted.</p>
-    </section>
-
-    <section class="section">
-      <h2>TapPay with Phones, Watches and Other Devices</h2>
-      <p>When tap-to-pay happens via a wallet app or wearable, your physical card number is usually replaced by a device-specific token. Biometric checks such as fingerprint or facial recognition release that token for use in the transaction, effectively shifting cardholder verification to the device.</p>
-      <p>This changes the risk equation: a properly authenticated wallet token can, in many markets, be treated as strong customer authentication. That can reduce how often you see random PIN prompts at the terminal, especially for repeat taps from the same device.</p>
-    </section>
-
-    <section class="section">
-      <h2>Security, Convenience and Practical Trade-Offs</h2>
-      <p>Modern tap-to-pay implementations are designed to keep the actual card number out of reach, minimize reusable data and limit the value of any one unauthorized tap. Short NFC range, dynamic data and automated monitoring all help reduce the risk surface.</p>
-      <p>At the same time, convenience has limits. Issuers may tighten rules in markets with higher fraud rates, disable tap if suspicious behavior is detected, or require full chip-and-PIN again after a card reissue or long period of inactivity.</p>
-    </section>
-
-    <!-- Comparison block -->
-    <section id="compare" class="section">
-      <h2>Compare TapPay & Contactless Features Across Cards</h2>
-      <div class="table-wrap">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>What to Look For</th>
-              <th>Why It Matters</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Contactless Profile</td>
-              <td>Enabled by default, customizable in app</td>
-              <td>Gives you control over when and where tap works.</td>
-            </tr>
-            <tr>
-              <td>Verification Rules</td>
-              <td>Clear documentation of when PIN or biometrics are required</td>
-              <td>Helps you predict how the card will behave in daily use.</td>
-            </tr>
-            <tr>
-              <td>Digital Wallet Support</td>
-              <td>Compatibility with major wallets and wearables</td>
-              <td>Determines whether you can move fully to phone or watch payments.</td>
-            </tr>
-            <tr>
-              <td>International Behaviour</td>
-              <td>How tap-to-pay works abroad, including FX surcharges</td>
-              <td>Important for frequent travellers who rely on contactless.</td>
-            </tr>
-            <tr>
-              <td>Security Toolkit</td>
-              <td>Instant lock, region controls, real-time alerts</td>
-              <td>Lets you respond fast if a card or device is lost.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="small">
-        For live product-by-product comparisons, visit
-        <a href="https://choose.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=comparison_section">
-          Choose.Creditcard
-        </a>.
-      </p>
-    </section>
-
-    <!-- Cluster links -->
-    <section class="section">
-      <h2>Explore Related Payment Technologies</h2>
-      <div class="cluster-grid">
-        <a class="cluster-card" href="https://virtualpay.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=cluster_virtualpay">
-          <h3>VirtualPay.Creditcard</h3>
-          <p>Virtual card numbers for online-first, card-not-present transactions.</p>
-        </a>
-        <a class="cluster-card" href="https://digitalpay.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=cluster_digitalpay">
-          <h3>DigitalPay.Creditcard</h3>
-          <p>Digital-first cards, in-app controls and embedded payment experiences.</p>
-        </a>
-        <a class="cluster-card" href="https://wearable.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=cluster_wearable">
-          <h3>Wearable.Creditcard</h3>
-          <p>Using rings, watches and other devices to tap instead of plastic.</p>
-        </a>
-        <a class="cluster-card" href="https://fin.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=cluster_fin">
-          <h3>Fin.Creditcard</h3>
-          <p>Broader overview of modern card technology, from virtual to crypto.</p>
-        </a>
-        <a class="cluster-card" href="https://tech.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=cluster_tech">
-          <h3>Tech.Creditcard</h3>
-          <p>Hub for next-generation card tech, security and infrastructure.</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- Collection section -->
-    <section class="section">
-      <h2>Part of The CreditCard Collection</h2>
-      <p class="small">
-        TapPay.Creditcard is one spoke in <strong>The CreditCard Collection</strong> — a network of focused microsites operated by ronarn AS. Each page isolates one part of the card ecosystem and explains how it works before sending you to independent comparison tools.
-      </p>
-      <p class="small">
-        We do not issue cards or operate payment terminals. This site is based on publicly available documentation and scheme rules, presented in neutral language so you can ask better questions of potential providers.
-      </p>
-      <p class="small">
-        Nothing here is financial, legal or technical advice. Always rely on your issuer’s official documentation and local regulations when deciding which card features to use and how to configure tap-to-pay.
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>How Tap-to-Pay Credit Cards Work</h1>
+      <p class="hero-lead">
+        Tap-to-pay lets you complete a transaction instantly with a simple contactless tap. This page explains how NFC,
+        cryptograms, transaction limits, offline approvals and security come together behind the scenes.
       </p>
 
-      <!-- REQUIRED HUB SNIPPET: Technology hub -->
-      <div class="hub-link">
-        <a href="https://choose.creditcard/technology/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=minisite_to_hub"
-           class="text-sm text-slate-600 hover:text-slate-900">
-          Learn more at the Technology hub
-        </a>
-      </div>
-    </section>
-
-    <!-- Bottom CTA -->
-    <section class="section">
-      <h2>Ready to Compare TapPay-Enabled Cards?</h2>
-      <p class="small">
-        Use TapPay.Creditcard to understand the mechanics of contactless transactions, then visit the main comparison hub to find cards with the tap-to-pay, wallet integration and security profile that match how you actually spend.
-      </p>
-      <a class="cta" href="https://choose.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=bottom_cta">
-        Go to Choose.Creditcard
+      <a class="cta" href="https://choose.creditcard/technology/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=hero_cta">
+        Explore the Technology & Payments hub
       </a>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="mini-footer">
-    <p class="mini-footer-main">© 2025 The CreditCard Collection — ronarn AS</p>
-    <p class="mini-footer-contact">
-      Contact: <a href="mailto:support@cc.creditcard">support@cc.creditcard</a>
+  <!-- Overview -->
+  <section id="overview" class="section">
+    <h2>What Does “Tap-to-Pay” Mean?</h2>
+    <p>
+      Tap-to-pay uses <strong>NFC (Near Field Communication)</strong> to allow a card or device to send payment
+      data wirelessly to a terminal. Instead of inserting a chip and entering a PIN, you hold your card close and the
+      terminal reads a one-time cryptographic value generated by the card.
     </p>
-  </footer>
+    <p>
+      Tap-to-pay is supported on most modern credit cards, as well as phones, watches and wearables using secure tokens.
+    </p>
+  </section>
+
+  <!-- Flow -->
+  <section id="flow" class="section">
+    <h2>How a Tap-to-Pay Transaction Flows</h2>
+    <ul>
+      <li>The terminal energises the NFC antenna and requests payment credentials.</li>
+      <li>The card responds with limited card data + a <strong>dynamic cryptogram</strong>.</li>
+      <li>The terminal performs basic risk checks and sends the data to the issuer.</li>
+      <li>The issuer validates the cryptogram and approves/declines.</li>
+      <li>For device wallets, the “card number” is a <strong>token</strong> unique to the device.</li>
+    </ul>
+    <p>All of this happens in under a second during a normal tap.</p>
+  </section>
+
+  <!-- Security -->
+  <section id="security" class="section">
+    <h2>Security Features of Tap-to-Pay</h2>
+    <ul>
+      <li><strong>Very short range NFC:</strong> physically difficult to intercept.</li>
+      <li><strong>Dynamic one-time cryptograms:</strong> stolen radio data cannot be reused.</li>
+      <li><strong>Risk scoring:</strong> issuer checks amount, region, frequency and merchant type.</li>
+      <li><strong>Device authentication:</strong> biometric unlock required on phones/watches.</li>
+    </ul>
+  </section>
+
+  <!-- Limits -->
+  <section id="limits" class="section">
+    <h2>Limits, PIN Prompts & Offline Cases</h2>
+    <p>Most regions impose tap-to-pay rules:</p>
+    <ul>
+      <li><strong>Single-transaction limits</strong> before the terminal forces chip & PIN.</li>
+      <li><strong>Cumulative spend limits</strong> reset after a PIN-verified purchase.</li>
+      <li><strong>Offline approvals</strong> for tiny amounts where no network check is required.</li>
+    </ul>
+  </section>
+
+  <!-- Cluster links -->
+  <section class="section">
+    <h2>Explore Related Contactless Topics</h2>
+    <div class="cluster-grid">
+
+      <a class="cluster-card" href="https://nfc.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=cluster_nfc">
+        <h3>NFC.Creditcard</h3>
+        <p>The full technical overview of NFC contactless payments.</p>
+      </a>
+
+      <a class="cluster-card" href="https://virtualpay.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=cluster_virtualpay">
+        <h3>VirtualPay.Creditcard</h3>
+        <p>Virtual cards and online-first security models.</p>
+      </a>
+
+      <a class="cluster-card" href="https://wearable.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=cluster_wearable">
+        <h3>Wearable.Creditcard</h3>
+        <p>Pay with watches, rings and other NFC wearables.</p>
+      </a>
+
+      <a class="cluster-card" href="https://wallets.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=cluster_wallets">
+        <h3>Wallets.Creditcard</h3>
+        <p>How device wallets tokenise and secure your card data.</p>
+      </a>
+
+      <a class="cluster-card" href="https://digitalpay.creditcard/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=cluster_digitalpay">
+        <h3>DigitalPay.Creditcard</h3>
+        <p>Broader digital payments outside physical NFC taps.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Collection -->
+  <section class="section">
+    <h2>Part of The CreditCard Collection</h2>
+    <p class="small">
+      TapPay.Creditcard is one technology-focused minisite in <strong>The CreditCard Collection</strong>. Each page
+      explains a specific part of how modern card payments work.
+    </p>
+    <p class="small">
+      Features, limits and availability vary by issuer and country. Always confirm terms with your bank before relying on any payment channel.
+    </p>
+
+    <!-- Hub snippet -->
+    <div class="hub-link">
+      <a href="https://choose.creditcard/technology/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=minisite_to_hub"
+         class="text-sm text-slate-400 hover:text-slate-200">
+        Learn more in the Technology & Payments hub on Choose.Creditcard
+      </a>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="section">
+    <h2>Compare Technology-Ready Cards</h2>
+    <p class="small">
+      Use TapPay.Creditcard to understand tap-to-pay mechanics — then compare live cards on the Technology hub.
+    </p>
+    <a class="cta" href="https://choose.creditcard/technology/?utm_source=tappay.creditcard&utm_medium=referral&utm_campaign=bottom_cta">
+      Go to Technology hub
+    </a>
+  </section>
+
+</main>
+
+<footer class="mini-footer">
+  <p class="mini-footer-main">© 2025 The CreditCard Collection — ronarn AS</p>
+  <p class="mini-footer-contact">
+    Contact: <a href="mailto:support@cc.creditcard">support@cc.creditcard</a>
+  </p>
+</footer>
+
 </body>
 </html>
